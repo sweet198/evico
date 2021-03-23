@@ -1,0 +1,71 @@
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const fileinclude = require('gulp-file-include');
+const imagemin = require('gulp-imagemin');
+const changed = require('gulp-changed');
+const beautify = require('gulp-beautify');
+const browsersync = require("browser-sync").create();
+const autoprefixer = require('gulp-autoprefixer');
+const webpack = require('webpack-stream');
+const webpackConfig = require('./webpack.config.js');
+
+gulp.task('sass', () => 
+	gulp.src('src/scss/**/*.scss')
+		.pipe(sass().on('error', sass.logError))
+		.pipe(beautify.css({indent_size: 2}))
+		.pipe(autoprefixer({
+			overrideBrowserslist: ['> 0.25%, not dead']      
+    }))		
+		.pipe(gulp.dest('dist/css'))
+		.pipe(browsersync.stream())
+);
+
+gulp.task('js', () =>
+	gulp.src('src/scripts/**/*.js')
+		.pipe(webpack(webpackConfig))
+		.pipe(gulp.dest('dist/scripts'))
+		.pipe(browsersync.stream())
+);
+
+gulp.task('image', () => 
+	gulp.src('src/img/**/*')
+		.pipe(changed('dist/img'))
+		.pipe(imagemin())				
+		.pipe(gulp.dest('dist/img'))
+		.pipe(browsersync.stream())
+);
+
+gulp.task('html', () => 
+	gulp.src('src/index.html')				
+		.pipe(fileinclude({
+			prefix: '@@',
+			basepath: '@file'
+		}))
+		// .pipe(webpHTML())
+		.pipe(beautify.html({ indent_size: 2 }))
+		.pipe(gulp.dest('dist'))
+		.pipe(browsersync.stream())
+);
+
+gulp.task('fonts', () =>
+	gulp.src('src/fonts/*')
+		.pipe(gulp.dest('dist/fonts'))
+		.pipe(browsersync.stream())
+);
+
+gulp.task('watch', () => { 
+	browsersync.init({
+		server: "./dist/",
+		port: 4000,
+		notify: true
+    });
+
+	gulp.watch('src/img/**/*', gulp.series('image'));
+	gulp.watch('src/scss/**/*.scss', gulp.series('sass'));
+	gulp.watch('src/**/*.html', gulp.series('html'));
+	gulp.watch('src/scripts/**/*.js', gulp.series('js'));
+	gulp.watch('src/fonts/*', gulp.series('fonts'));
+
+});
+
+gulp.task('default', gulp.series('js', 'fonts', 'image', 'sass', 'html', 'watch'));

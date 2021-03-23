@@ -1,0 +1,41 @@
+{
+  "name": "evico.spb.ru",
+  "version": "1.4.0",
+  "description": "website for electrician services",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sweet198/evico.git"
+  },
+  "author": "Vladislav Svitkovskiy <svitkovskiy198@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sweet198/evico/issues"
+  },
+  "homepage": "https://github.com/sweet198/evico#readme",
+  "dependencies": {
+    "@glidejs/glide": "^3.4.1",
+    "animate.css": "^4.1.1",
+    "bootstrap": "^4.6.0",
+    "normalize.css": "^8.0.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.12",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-beautify": "^3.0.0",
+    "gulp-changed": "^4.0.2",
+    "gulp-file-include": "^2.2.2",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-webp": "^4.0.1",
+    "gulp-webp-css": "^1.1.0",
+    "gulp-webp-html": "^1.0.2",
+    "webpack": "^5.3.2",
+    "webpack-cli": "^4.1.0",
+    "webpack-stream": "^6.1.0"
+  }
+}

@@ -5,6 +5,9 @@ node_modules
 # webpack
 .idea
 
+# VS code
+.vscode
+
 # testing
 /coverage
 
