@@ -14,7 +14,7 @@ gulp.task('sass', () =>
 		.pipe(sass().on('error', sass.logError))
 		.pipe(beautify.css({indent_size: 2}))
 		.pipe(autoprefixer({
-			overrideBrowserslist: ['> 0.25%, not dead']      
+			overrideBrowserslist: ['last 4 versions']
     }))		
 		.pipe(gulp.dest('dist/css'))
 		.pipe(browsersync.stream())
