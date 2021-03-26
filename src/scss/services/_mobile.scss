@@ -1,15 +1,144 @@
+@media (max-width: 1280px) {
 
-@media (max-width: 768px) {
   .page-header .wrapper {
     width: 100%;
   }
 
+  .main-navigation {
+    position: relative;
+  }
+
+  .main-header-logo {
+    width: 200px;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+  }
+
   .site-navigation {
-    display: none;
+    position: absolute;
+    left: 50%;
+    top: 200px;
+    //bottom: -70%;
+    width: 760px;
+    margin-left: -380px;
+  }
+
+  .contacts-list li {
+    width: 200px;
+  }
+
+  .contacts-list .phone {
+    font-size: 1.4rem;
   }
 
   .slogan {
     width: 95%;
+  }
+
+  .features {
+    width: 768px;
+  }
+
+  .features-list li {
+    width: 340px;
+    margin-bottom: 20px;
+  }
+
+  .about .wrapper {
+    width: 768px;
+  }
+
+  .about .photo {
+    height: 815px;
+    align-self: flex-start;
+  }
+
+  .about .about-column {
+    position: absolute;
+    bottom: 10px;
+    right: -5%;
+
+    width: 470px;
+    font-size: 1.3rem;
+    line-height: 1.3rem;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+
+  .prices-and-services {
+    width: 100%;
+  }
+
+  .prices-services-columns {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px;
+  }
+
+  .steps {
+    width: 768px;
+  }
+
+  .steps-list {
+    width: 100%;
+  }
+
+  .steps-list .block img,
+  .steps-list .block p  {
+    width: 40%;
+  }
+
+  .tools-wrapper {
+    width: 100%;
+  }
+
+  .tools-item {
+    width: 30%;
+  }
+
+  .page-footer .wrapper {
+    width: 100%;
+  }
+
+  .footer-site-navigation {
+    width: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-header .nav-button {
+    display: block;
+  }
+
+  .site-navigation {
+    position: absolute;
+    top: 0;
+    left: 1px;
+
+    display: none;
+    flex-direction: column;
+
+    width: 99%;
+    margin-left: 0;
+    padding-left: 30px;
+    line-height: 4rem;
+    background-color: rgba(30, 30, 30, 0.9);
+    z-index: 1;
+  }
+
+  .site-navigation:hover,
+  .site-navigation:focus {
+    background-color: rgba(30, 30, 30, 0.9);
+  }
+
+  .site-navigation a {
+    display: inline-block;
+  }
+
+  .contacts-list li {
+    width: 250px;
   }
 
   .features {
@@ -29,48 +158,38 @@
 
   .about .wrapper {
     width: 576px;
-    display: flex;
     flex-direction: column-reverse;
   }
 
+  .about .photo {
+    width: 300px;
+    height: 637px;
+  }
+
   .about .about-column {
+    position: static;
     width: 576px;
     box-sizing: border-box;
     margin-right: 0;
     margin-bottom: 20px;
     font-size: 1rem;
     line-height: 1rem;
-    background-color: rgba(255, 255, 255, 0.8);
   }
 
-  .prices-and-services {
-    width: 100%;
-    margin: 0 auto;
-    margin-bottom: 50px;
-
-    text-align: center;
-  }
-
-  .prices-services-columns {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    padding: 10px;
+  .prices-table,
+  .services-table {
+    width: 576px;
   }
 
   .prices-table td,
   .services-table td {
     padding: 10px 5px;
-    font-size: 0.8rem;
-    line-height: 0.8rem;
+    font-size: 1rem;
+    line-height: 1rem;
   }
 
   .steps {
     width: 576px;
-  }
-
-  .steps-list {
-    width: 100%;
   }
 
   .steps-list .block,
@@ -107,18 +226,15 @@
     flex-direction: column;
   }
 
-  .tools-wrapper {
-    width: 100%;
-  }
-
   .tools-list {
     flex-direction: row;
     align-items: stretch;
     flex-wrap: wrap;
   }
 
-  .tools-item {
-    width: 170px;
+  .page-footer {
+    //padding-bottom: 0;
+    margin-bottom: -50px;
   }
 
   .footer-site-navigation {
@@ -126,8 +242,7 @@
   }
 
   .page-footer .wrapper {
-    width: 100%;
-    padding-bottom: 90px;
+    padding-bottom: 30px;
   }
 }
 
@@ -169,6 +284,8 @@
   }
 
   .contacts-list .feedback a {
+    width: auto;
+    padding: 10px;
     font-size: 1.5rem;
     line-height: 1.5rem;
     text-decoration: underline;
@@ -208,10 +325,15 @@
     margin-bottom: 5px;
   }
 
-  .about .photo {
-    width: 300px;
-    height: 635px;
-    align-self: flex-start;
+  .prices-table,
+  .services-table {
+    width: 100%;
+  }
+
+  .prices-table td,
+  .services-table td {
+    font-size: 0.8rem;
+    line-height: 0.8rem;
   }
 
   .steps {
@@ -251,6 +373,13 @@
     margin-top: 5px;
     font-size: 0.7rem;
     line-height: 0.7rem;
+  }
+
+  .modal {
+    width: 350px;
+    margin-left: -175px;
+    padding: 30px 10px;
+    font-size: 1rem;
   }
 }
 

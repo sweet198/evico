@@ -11,8 +11,8 @@ const webpackConfig = require('./webpack.config.js');
 
 gulp.task('sass', () => 
 	gulp.src('src/scss/**/*.scss')
-		.pipe(sass().on('error', sass.logError))
-		.pipe(beautify.css({indent_size: 2}))
+		.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+		// .pipe(beautify.css({indent_size: 2}))
 		.pipe(autoprefixer({
 			overrideBrowserslist: ['last 4 versions']
     }))		

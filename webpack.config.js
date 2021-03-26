@@ -5,6 +5,9 @@ module.exports = {
   output: {
     filename: 'bundle.js',   
   },
+  optimization: {
+    minimize: true
+  },
   devtool: "source-map",
   module: {
     rules: [
