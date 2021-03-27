@@ -4,6 +4,7 @@ function modal() {
 	const modal = document.querySelector('.modal-feedback');
 	const overlay = document.querySelector('.modal-overlay');
 	const close = modal.querySelector('.modal-close');
+	const btn = modal.querySelector('.feedback-form .button')
 
 	modal.classList.add('animate__animated');
 	overlay.classList.add('animate__animated');
@@ -52,8 +53,7 @@ function modal() {
 		}
 	});
 
-	modal.addEventListener('submit', evt => {
-		evt.preventDefault();
+	btn.addEventListener('click', () => {
 		closeModal();
 	})
 }
