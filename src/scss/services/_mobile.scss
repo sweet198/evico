@@ -210,7 +210,7 @@
   }
 
   .steps-list .block span {
-    z-index: +5;
+    z-index: 1;
   }
 
   .steps-list .block span::after {
@@ -218,7 +218,7 @@
   }
 
   .steps-list .block span::before {
-    z-index: 0;
+    z-index: -1;
   }
 
   .steps__phone {

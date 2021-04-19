@@ -42,7 +42,7 @@ function modal() {
 	});
 
 	document.addEventListener('keydown', evt => {
-		if (evt.code === 'Escape' && modal.classList.contains('modal-show')) {
+		if (evt.code === 'Escape' && modal.classList.contains('animate__fadeInTopRight')) {
 			closeModal();
 		}
 	});
@@ -53,9 +53,9 @@ function modal() {
 		}
 	});
 
-	btn.addEventListener('click', () => {
-		closeModal();
-	})
+	// btn.addEventListener('click', () => {
+	// 	closeModal();
+	// })
 }
 
 export default modal;
